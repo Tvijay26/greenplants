@@ -1,0 +1,201 @@
+/* Reset and base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background:lightgreen;
+  color: #2a6f2a;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* Navbar styles */
+.navbar {
+  display: flex;
+  background: #3a8d0d;
+  padding: 10px 18px;
+  box-shadow:1px;
+  align-items: center;
+  gap: 100px;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-item {
+  position: relative;
+  color: #e6f2e6;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  user-select: none;
+  font-size: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-item:hover {
+  background-color: #2d6d0b;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+  filter: brightness(90%) saturate(150%);
+  transition: filter 0.3s ease;
+}
+
+.nav-item:hover > .icon {
+  filter: brightness(110%) saturate(180%);
+}
+
+/* Dropdown container */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 38px;
+  left: 0;
+  background: #2e7d0a;
+  min-width: 160px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+  border-radius: 6px;
+  z-index: 10;
+  flex-direction: column;
+  padding: 8px 0;
+  font-size: 14px;
+}
+
+/* Show dropdown on hover */
+.nav-item.dropdown:hover .dropdown-content {
+  display: flex;
+}
+
+/* Dropdown links */
+.dropdown-content a {
+  color: #d4f4d4;
+  padding: 9px 16px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s ease;
+  font-weight: 500;
+  border-radius: 0 6px 6px 0;
+}
+
+.dropdown-content a:hover {
+  background-color: #3ba40f;
+  color: #eaffea;
+}
+
+/* Icon in dropdown */
+.dropdown-content a .icon {
+  width: 16px;
+  height: 16px;
+  filter: brightness(100%) saturate(140%);
+}
+
+/* Dashboard section */
+.dashboard {
+  max-width: 1100px;
+  margin: 40px auto 60px;
+  padding: 0 20px;
+  text-align: center;
+  background: #d4efce;
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(74, 109, 62, 0.25);
+  padding-bottom: 36px;
+  transition: box-shadow 0.25s ease;
+}
+
+.dashboard:hover {
+  box-shadow: 0 14px 32px rgba(74, 109, 62, 0.4);
+}
+
+.dashboard h1 {
+  font-size: 2.4rem;
+  margin-bottom: 12px;
+  color: #2a6f2a;
+  text-shadow: 1.5px 1.5px 3px rgba(30, 70, 20, 0.35);
+}
+
+.dashboard p {
+  font-size: 1.1rem;
+  color: #4a7040;
+  margin-bottom: 36px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.4;
+}
+
+/* Grid layout for cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+  gap: 24px;
+  padding: 0 10px;
+}
+
+/* Card styles */
+.card {
+  background: #e6f4df;
+  border-radius: 12px;
+  box-shadow: 0 5px 16px rgba(38, 97, 15, 0.18);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: default;
+}
+
+.card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 12px 36px rgba(46, 128, 9, 0.32);
+}
+
+.card img {
+  width: 100%;
+  max-width: 2000px;
+  border-radius: 40px;
+  object-fit: cover;
+  box-shadow: 0 5px 16px rgba(40, 120, 10, 0.3);
+  user-select: none;
+}
+
+.card div {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #245a17;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+  user-select: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 650px) {
+  .navbar {
+    justify-content: center;
+  }
+  
+  .nav-item {
+    font-size: 14px;
+  }
+  
+  .dashboard h1 {
+    font-size: 2rem;
+  }
+  
+  .dashboard p {
+    font-size: 1rem;
+  }
+}
